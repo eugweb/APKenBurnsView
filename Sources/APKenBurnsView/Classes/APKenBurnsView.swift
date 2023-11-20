@@ -126,8 +126,9 @@ public class APKenBurnsView: UIView {
 
         stopWatch = StopWatch()
 
-        let image = dataSource?.nextImageForKenBurnsView(kenBurnsView: self)
-        startTransitionWithImage(image: image!, imageView: firstImageView, nextImageView: secondImageView)
+        if let image = dataSource?.nextImageForKenBurnsView(kenBurnsView: self) {
+            startTransitionWithImage(image: image, imageView: firstImageView, nextImageView: secondImageView)
+        }
     }
 
     public func pauseAnimations() {
